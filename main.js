@@ -129,3 +129,64 @@ const processarElements = (countArray, triggerFunction) => {
   });
 };
 processarElements(countArray, triggerFunction);
+
+// Bloc 1.4 Rest & Spread Operators
+//1
+array1 = [2, 4, 6, 8];
+array2 = [1, 3, 5, 7];
+
+const array3 = [...array1, ...array2];
+console.log(array3.toSorted());
+
+//2
+const sumaIlimitada = (...numerosIlimitados) => {
+  let total = 0;
+  for (const numeroIlimitado of numerosIlimitados) {
+    total += numeroIlimitado;
+  }
+  return total;
+};
+console.log(sumaIlimitada(2, 3, 4, 6));
+
+//3
+const object1 = {
+  name: "Pepe",
+  email: "pepe1@gmail.com",
+};
+let object2 = { ...object1 };
+
+object2.email = "object2@gmail.com";
+
+console.log(object1, object2);
+
+//4
+const animals = ["dog", "cat", "fish", "lion"];
+
+const [firstAnimal, secondAnimal, ...restOfAnimals] = animals;
+console.log(firstAnimal);
+console.log(secondAnimal);
+console.log(restOfAnimals);
+
+//5
+const spreadFunction = (a, b, c) => {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+};
+const tresElements = ["Primer Elemento", "Segundo Elemento", "Tercer Elemento"];
+
+spreadFunction(...tresElements);
+
+//6
+const object3 = {
+  nombre: "Pepa",
+  apellido: "Garcia",
+  edad: 22,
+};
+const object4 = {
+  pareja: true,
+  colorFavorito: "Azul",
+  sueldo: 1500,
+};
+const object5 = { ...object3, ...object4 };
+console.table(object5);
