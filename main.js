@@ -1,4 +1,4 @@
-//Bloc 1.1
+//Bloc 1.1 Arrow Functions
 //1
 function add(a, b) {
   return a + b;
@@ -79,3 +79,53 @@ for (numero of arrayNumeros) {
 }
 console.log("Números pares", numerosPares);
 console.log("Números impares", numerosImpares);
+
+// Bloc 1.2 Callbacks
+//1
+
+const callback = (num) => {
+  console.log(`Número pasado por parámetro es el ${num}`);
+};
+const processar = (num, callback) => {
+  callback(num);
+};
+
+processar(6, callback);
+
+//2
+const suma = (num3, num4) => {
+  return num3 + num4;
+};
+
+const calculadora = (num3, num4, suma) => {
+  console.log(suma(num3, num4));
+};
+
+calculadora(3, 5, suma);
+
+//3
+
+const saludar = (nom) => {
+  console.log(`Hola ${nom}!`);
+};
+const esperarISaludar = (nom, saludar) => {
+  return setTimeout(() => {
+    saludar(nom);
+  }, 2000);
+};
+
+esperarISaludar("Pepe", saludar);
+
+//4
+
+let countArray = [1, 2, 3, 4];
+
+const triggerFunction = () => {
+  console.log("Pim,pam,pum");
+};
+const processarElements = (countArray, triggerFunction) => {
+  countArray.forEach((countNumber) => {
+    triggerFunction(countNumber);
+  });
+};
+processarElements(countArray, triggerFunction);
