@@ -276,3 +276,55 @@ noms = ["Anna", "Bernat", "Clara"];
 for (const [index, nom] of noms.entries()) {
   console.log("Índice:", index, "Nombre:", nom);
 }
+
+// Bloc 1.7 Promises & Async/Await
+//1
+function promesa() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const resuelto = true;
+      if (resuelto) {
+        resolve("Hola, món.");
+      } else {
+        reject(new Error("No funciona"));
+      }
+    }, 2000);
+  });
+}
+
+//2
+promesa()
+  .then((resultado) => {
+    console.log(resultado);
+  })
+  .catch((error) => {
+    console.error(error.message);
+  });
+
+//3
+let input = "Hello";
+const promiseReject = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (input == "Hola") {
+        resolve('"Hola" bien escrito');
+      } else {
+        reject(new Error('No está escrito "Hola"'));
+      }
+    }, 2000);
+  });
+};
+
+promiseReject()
+  .then((resultado) => {
+    console.log("Succes:", resultado);
+  })
+  .catch((motivo) => {
+    console.error("Error:", motivo.message);
+  });
+
+//4
+asyncFunction = async () => {
+  const result = await promesa();
+  console.log("Async result:", result);
+};
