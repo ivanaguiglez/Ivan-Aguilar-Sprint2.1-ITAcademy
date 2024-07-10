@@ -237,3 +237,42 @@ const comprobacionEvery = otroArray.every((n) => n > 10);
 const comprobacionSome = otroArray.some((n) => n <= 10);
 console.log(comprobacionEvery);
 console.log(comprobacionSome);
+
+// Bloc 1.6 Array loops
+//1
+let noms = ["Anna", "Bernat", "Clara"];
+noms.forEach((nom) => {
+  console.log("Usando forEach", nom);
+});
+
+//2
+
+for (let nom of noms) {
+  console.log("Usando for of", nom);
+}
+
+//3
+let numerosDeNuevo = [1, 2, 3, 4, 5, 6];
+console.log(numerosDeNuevo.filter((n) => n % 2 == 0));
+
+//4
+let obj = { nom: "Ona", edat: 25, ciutat: "Barcelona" };
+for (const key in obj) {
+  console.log(`La propiedad ${key} tiene el valor ${obj[key]}`);
+}
+
+//5
+numerosDeNuevo = [1, 2, 3, 4, 5, 6];
+for (const numero of numerosDeNuevo) {
+  console.log(numero);
+  if (numero == 5) {
+    break;
+  }
+}
+
+//6
+noms = ["Anna", "Bernat", "Clara"];
+
+for (const [index, nom] of noms.entries()) {
+  console.log("Índice:", index, "Nombre:", nom);
+}
