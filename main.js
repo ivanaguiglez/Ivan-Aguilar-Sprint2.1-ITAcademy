@@ -190,3 +190,50 @@ const object4 = {
 };
 const object5 = { ...object3, ...object4 };
 console.table(object5);
+
+// Bloc 1.5 Array transformations
+//1
+const numerosArray = [1, 2, 3, 4];
+const numerosAlCuadrado = numerosArray.map(
+  (numeroArray) => numeroArray * numeroArray
+);
+console.log(numerosAlCuadrado);
+
+//2
+const arrayNumerosPares = numerosArray.filter(
+  (numerosArray) => numerosArray % 2 == 0
+);
+console.log(arrayNumerosPares);
+
+//3
+const arrayConNumeros = [1, 10, 8, 11];
+primerNumeroMayorADiez = arrayConNumeros.find((numero) => numero > 10);
+console.log(primerNumeroMayorADiez);
+
+//4
+const arrayConNumeros2 = [13, 7, 8, 21];
+
+let sumaDeArrayConNumeros2 = arrayConNumeros2.reduce(
+  (accumulator, currentValue) => accumulator + currentValue
+);
+console.log(sumaDeArrayConNumeros2);
+
+//5
+const arrayNumerosRandom = [1, 3, 7, 10, 15, 17, 11, 5, 8, 12, 9];
+
+const funcionUnaLinea = (array) => {
+  return array
+    .filter((n) => n >= 10)
+    .map((n) => n * 2)
+    .reduce((accumulator, currentValue) => accumulator + currentValue);
+};
+
+console.log(funcionUnaLinea(arrayNumerosRandom));
+
+//6
+const otroArray = [11, 12, 13, 14];
+
+const comprobacionEvery = otroArray.every((n) => n > 10);
+const comprobacionSome = otroArray.some((n) => n <= 10);
+console.log(comprobacionEvery);
+console.log(comprobacionSome);
